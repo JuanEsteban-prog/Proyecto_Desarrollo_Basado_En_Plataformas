@@ -4,7 +4,7 @@ module.exports = cors({
   origin: [
     'http://localhost:5052',
     'http://localhost:2051',
-    'https://proyecto-plataformas-web.onrender.com'
+    'https://juanesteban-prog.github.io'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

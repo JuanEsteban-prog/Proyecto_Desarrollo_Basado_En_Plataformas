@@ -96,11 +96,11 @@ test('unknown routes return a JSON 404 response', async () => {
   });
 });
 
-test('CORS allows the deployed frontend origin', async () => {
+test('CORS allows the GitHub Pages frontend origin', async () => {
   const response = await fetch(`${baseUrl}/api/productos`, {
-    headers: { Origin: 'https://proyecto-plataformas-web.onrender.com' }
+    headers: { Origin: 'https://juanesteban-prog.github.io' }
   });
 
   assert.equal(response.headers.get('access-control-allow-origin'),
-    'https://proyecto-plataformas-web.onrender.com');
+    'https://juanesteban-prog.github.io');
 });
