@@ -1,5 +1,14 @@
 services:
   - type: web
+    name: proyecto-plataformas-web
+    runtime: static
+    branch: main
+    rootDir: frontend
+    buildCommand: echo "Static site ready"
+    staticPublishPath: public
+    autoDeployTrigger: checksPass
+
+  - type: web
     name: proyecto-plataformas-api
     runtime: node
     plan: free

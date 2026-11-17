@@ -95,3 +95,12 @@ test('unknown routes return a JSON 404 response', async () => {
     message: 'Ruta no encontrada.'
   });
 });
+
+test('CORS allows the deployed frontend origin', async () => {
+  const response = await fetch(`${baseUrl}/api/productos`, {
+    headers: { Origin: 'https://proyecto-plataformas-web.onrender.com' }
+  });
+
+  assert.equal(response.headers.get('access-control-allow-origin'),
+    'https://proyecto-plataformas-web.onrender.com');
+});
