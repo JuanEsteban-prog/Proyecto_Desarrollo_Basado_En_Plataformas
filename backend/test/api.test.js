@@ -104,3 +104,18 @@ test('CORS allows the GitHub Pages frontend origin', async () => {
   assert.equal(response.headers.get('access-control-allow-origin'),
     'https://juanesteban-prog.github.io');
 });
+
+test('CORS preflight allows product creation from GitHub Pages', async () => {
+  const response = await fetch(`${baseUrl}/api/productos`, {
+    method: 'OPTIONS',
+    headers: {
+      Origin: 'https://juanesteban-prog.github.io',
+      'Access-Control-Request-Method': 'POST'
+    }
+  });
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get('access-control-allow-origin'),
+    'https://juanesteban-prog.github.io');
+  assert.match(response.headers.get('access-control-allow-methods'), /POST/);
+});
