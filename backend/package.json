@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "API REST de productos con Express y PostgreSQL",
+  "engines": {
+    "node": ">=26.13.0"
+  },
   "main": "src/app.js",
   "scripts": {
     "start": "node server.js",
+    "test": "node --test",
+    "check:deps": "npm ls --depth=0",
     "db:generate": "prisma generate",
     "db:push": "dotenv -e ../.env -- prisma db push"
   },
@@ -20,5 +25,9 @@
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
     "prisma": "^7.10.1"
+  },
+  "allowScripts": {
+    "@prisma/engines@7.10.1": true,
+    "prisma@7.10.1": true
   }
 }
