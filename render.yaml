@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: proyecto-plataformas-api
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: backend
+    buildCommand: npm ci && npm run db:generate
+    startCommand: npx prisma db push && npm start
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: proyecto-plataformas-db
+          property: connectionString
