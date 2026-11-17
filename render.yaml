@@ -3,7 +3,6 @@ services:
     name: proyecto-plataformas-web
     runtime: static
     branch: main
-    rootDir: frontend
     buildCommand: echo "Static site ready"
     staticPublishPath: frontend/public
     autoDeployTrigger: checksPass
