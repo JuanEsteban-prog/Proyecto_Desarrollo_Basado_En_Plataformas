@@ -5,7 +5,7 @@ services:
     branch: main
     rootDir: frontend
     buildCommand: echo "Static site ready"
-    staticPublishPath: public
+    staticPublishPath: frontend/public
     autoDeployTrigger: checksPass
 
   - type: web
